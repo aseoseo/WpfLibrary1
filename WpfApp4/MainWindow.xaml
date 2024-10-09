@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+            <!-- Контейнер для TextBox с "плейсхолдером" -->
+            <Grid>
+                <!-- Текстовое поле -->
+                <TextBox x:Name="KeywordInput" Width="200" Margin="10" TextChanged="KeywordInput_TextChanged"/>
+
+                <!-- Плейсхолдер -->
+                <TextBlock x:Name="PlaceholderText"
+                           Text="Введите ключевое слово"
+                           Foreground="Gray"
+                           IsHitTestVisible="False"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="14,0,0,0"/>
+            </Grid>
+
+            <!-- Выпадающий список для выбора фильтра -->
+            <ComboBox x:Name="FilterSelector" Width="200" Margin="10">
+                <ComboBoxItem Content="Фильтр по дате"/>
+                <ComboBoxItem Content="Фильтр по ключевому слову"/>
+            </ComboBox>
+
+            <!-- Кнопка для применения фильтра -->
+            <Button Content="Применить фильтр" Width="200" Margin="10" Click="ApplyFilter_Click"/>
+
+            <!-- Текстовый блок для отображения результата -->
+            <TextBlock x:Name="ResultTextBlock" Margin="10" TextWrapping="Wrap" FontSize="14" TextAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>

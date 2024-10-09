@@ -1,0 +1,35 @@
+﻿<Window x:Class="GeometryApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GeometryApp"
+        Title="Вычисление площади фигур" Height="350" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Выбор фигуры -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <Label Content="Выберите фигуру:" VerticalAlignment="Center"/>
+            <ComboBox x:Name="FigureComboBox" Width="150" Margin="10,0,0,0" SelectionChanged="FigureComboBox_SelectionChanged">
+                <ComboBoxItem Content="Круг"/>
+                <ComboBoxItem Content="Прямоугольник"/>
+                <ComboBoxItem Content="Треугольник"/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Динамические поля ввода -->
+        <StackPanel x:Name="ParametersPanel" Grid.Row="1" Margin="0,0,0,10">
+            <!-- Поля будут добавляться динамически -->
+        </StackPanel>
+
+        <!-- Кнопка расчета -->
+        <Button Content="Рассчитать" Grid.Row="2" Width="100" HorizontalAlignment="Left" Click="CalculateButton_Click"/>
+
+        <!-- Отображение результата -->
+        <TextBlock x:Name="ResultTextBlock" Grid.Row="3" Margin="0,10,0,0" FontSize="16" FontWeight="Bold"/>
+    </Grid>
+</Window>

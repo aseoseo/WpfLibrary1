@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfApp5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Сортировка чисел" Height="350" Width="400">
+    <Grid Margin="10">
+        <StackPanel>
+            <!-- Контейнер для TextBox с "плейсхолдером" -->
+            <Grid>
+                <!-- Поле для ввода чисел -->
+                <TextBox x:Name="NumbersInput" Width="300" Margin="0,10,0,0" 
+                         HorizontalAlignment="Center"
+                         TextChanged="NumbersInput_TextChanged"/>
+
+                <!-- Плейсхолдер, отображаемый, когда текстовое поле пусто -->
+                <TextBlock x:Name="PlaceholderText"
+                           Text="Введите числа через запятую"
+                           Foreground="Gray"
+                           IsHitTestVisible="False"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="5,0,0,0"/>
+            </Grid>
+
+            <!-- Выбор метода сортировки -->
+            <ComboBox x:Name="SortMethodSelector" Width="300" Margin="0,10,0,10" 
+                      HorizontalAlignment="Center">
+                <ComboBoxItem Content="Сортировка пузырьком" IsSelected="True"/>
+                <ComboBoxItem Content="Быстрая сортировка"/>
+            </ComboBox>
+
+            <!-- Кнопка для запуска сортировки -->
+            <Button x:Name="SortButton" Content="Сортировать" Width="300" Margin="0,10,0,10" 
+                    HorizontalAlignment="Center" Click="SortButton_Click"/>
+
+            <!-- Поле для отображения результата сортировки -->
+            <TextBlock x:Name="ResultTextBlock" Width="300" TextWrapping="Wrap" 
+                       HorizontalAlignment="Center" FontSize="16" TextAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
